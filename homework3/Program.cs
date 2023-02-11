@@ -1,5 +1,5 @@
 ﻿// Задача 19. Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
-/*
+
 
 bool Palindrome(int number)
 {   
@@ -33,11 +33,12 @@ bool result = Palindrome(numbers);
 Console.WriteLine($"{numbers} is palindrome: {result}");
 
 
-*/
+
+
 
 
 // Задача 21. Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
-/*
+
 
 double Distance (double xA, double yA, double zA, double xB, double yB, double zB)
 {
@@ -69,7 +70,9 @@ double zB = Convert.ToDouble(Console.ReadLine());
 double Result = Distance(xA, yA, zA, xB, yB, zB);
 Console.WriteLine($"Distance between 2 points in 3D is {Result}");
 
-*/
+
+
+
 
 //  Задача 23. Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
 
