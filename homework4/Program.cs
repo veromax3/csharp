@@ -37,6 +37,8 @@ Console.WriteLine($"The result of raising number {numA} to the power {numB} is: 
 
 // Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
 
+/*
+
 int Sum(int Number)
 {
     int sum = 0;
@@ -53,3 +55,32 @@ int Number = Convert.ToInt32(Console.ReadLine());
 
 int SumNumElements = Sum (Number);
 Console.WriteLine($"Sum of elements of number {Number} is: {SumNumElements}");
+
+*/
+
+// Задача 29: Напишите программу, которая задаёт массив из m элементов и выводит их на экран. Массив не рандомный, элементы задаются пользователем
+
+
+int [] CreateArray(int size)   
+{
+    int[] array = new int[size];
+    for (int i = 0; i < size; i++)
+    {
+        Console.WriteLine($"Input the {i + 1} element of array: ");
+        array[i] = Convert.ToInt32(Console.ReadLine());
+    }
+    return array;
+} 
+
+void ShowArray(int[] array)                                   
+{
+    for (int i = 0; i < array.Length; i ++)
+        Console.Write(array[i] + " ");
+    Console.WriteLine();
+}
+
+Console.Write("Input a length of new array: ");             
+int length = Convert.ToInt32(Console.ReadLine());
+
+int[] myArray = CreateArray(length);
+ShowArray(myArray); 
