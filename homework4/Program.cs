@@ -24,8 +24,6 @@ int RaiseToPower(int A, int B)
     }
 }
 
-Console.WriteLine("Input a number: ");
-int numA = Convert.ToInt32(Console.ReadLine());
 
 Console.WriteLine("Input a power: ");
 int numB = Convert.ToInt32(Console.ReadLine());
@@ -37,7 +35,7 @@ Console.WriteLine($"The result of raising number {numA} to the power {numB} is: 
 
 
 
-// Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+// Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму ци846515фр в числе.
 
 int Sum(int Number)
 {
