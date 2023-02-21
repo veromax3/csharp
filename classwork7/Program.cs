@@ -1,5 +1,18 @@
-﻿int[,] CreateRandom2dArray (int rows, int columns, int minValue, int maxValue)
+﻿int[,] CreateRandom2dArray ()
 {
+    Console.WriteLine("Input a number of rows: ");
+    int rows = Convert.ToInt32(Console.ReadLine());
+
+    Console.WriteLine("Input a number of columns: ");
+    int columns = Convert.ToInt32(Console.ReadLine());
+
+    Console.WriteLine("Input min possible value: ");
+    int minValue = Convert.ToInt32(Console.ReadLine());
+
+    Console.WriteLine("Input max possible value: ");
+    int maxValue = Convert.ToInt32(Console.ReadLine());
+
+
     int[,] array = new int[rows, columns];
 
     for(int i = 0; i < rows; i++)
@@ -25,19 +38,9 @@ void Show2dArray (int[,] array)
     Console.WriteLine();
 }
 
-Console.WriteLine("Input a number of rows: ");
-int rows = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine("Input a number of columns: ");
-int columns = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine("Input min possible value: ");
-int minValue = Convert.ToInt32(Console.ReadLine());
-
-Console.WriteLine("Input max possible value: ");
-int maxValue = Convert.ToInt32(Console.ReadLine());
-
-int[,] MyArray = CreateRandom2dArray(rows, columns, minValue, maxValue);
+int[,] MyArray = CreateRandom2dArray();
 Show2dArray(MyArray);
 
 
