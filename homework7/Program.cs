@@ -1,5 +1,5 @@
 ﻿// Задача 47. Задайте двумерный массив размером m×n, заполненный случайными вещественными числами
-
+/*
 double[,] CreateRandom2dArray ()
 {
     Console.WriteLine("Input a number of rows: ");
@@ -28,4 +28,54 @@ void Show2dArray (double[,] array)
     Console.WriteLine();
 }
 double[,] MyArray = CreateRandom2dArray();
+Show2dArray(MyArray);
+*/
+
+
+// Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и
+// возвращает значение этого элемента или же указание, что такого элемента нет.
+
+int[,] CreateRandom2dArray ()
+{
+    int rows = new Random().Next(0, 20 + 1);
+    int columns = new Random().Next(0, 20 + 1);
+    int[,] array = new int[rows, columns];
+
+    for(int i = 0; i < rows; i++)
+        for(int j = 0; j < columns; j++)
+            array[i, j] = new Random().Next(0, 500 + 1);
+    return array;
+}
+void Show2dArray (int[,] array)
+{
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for(int j = 0; j < array.GetLength(1); j++)
+            Console.Write(array[i, j] + " ");
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+}
+
+void findNumber(int[,] array)
+{
+    Console.WriteLine("Input a row: ");
+    int row = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Input a column: ");
+    int column = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine();
+
+    if ((row <= array.GetLength(0)) && column <= array.GetLength(1))
+        Console.WriteLine($"The number with index[{row}, {column}] is {array[row, column]}");
+    else
+    {
+        Console.WriteLine($"The number with index[{row},{column}] is not found");
+    }
+
+    Console.WriteLine();
+    
+}
+
+int[,] MyArray = CreateRandom2dArray();
+findNumber(MyArray);
 Show2dArray(MyArray);
