@@ -1,6 +1,6 @@
 ﻿// Задача 47. Задайте двумерный массив размером m×n, заполненный случайными вещественными числами
-/*
-double[,] CreateRandom2dArray ()
+
+double[,] CreateRandom2dArray1 ()
 {
     Console.WriteLine("Input a number of rows: ");
     int rows = Convert.ToInt32(Console.ReadLine());
@@ -17,36 +17,36 @@ double[,] CreateRandom2dArray ()
             array[m, n] = new Random().Next(minValue, maxValue) + Math.Round((new Random().NextDouble()), 2);
     return array;
 }
-void Show2dArray (double[,] array)
+void Show2dArray1(double[,] array)
 {
     for(int m = 0; m < array.GetLength(0); m++)
     {
         for(int n = 0; n < array.GetLength(1); n++)
-            Console.Write(array[m, n] + " ");
+            Console.Write(Math.Round(array[m, n], 1) + " ");
         Console.WriteLine();
     }
     Console.WriteLine();
 }
-double[,] MyArray = CreateRandom2dArray();
-Show2dArray(MyArray);
-*/
+double[,] MyArray1 = CreateRandom2dArray1();
+Show2dArray1(MyArray1);
+
 
 
 // Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и
 // возвращает значение этого элемента или же указание, что такого элемента нет.
-/*
-int[,] CreateRandom2dArray ()
+
+int[,] CreateRandom2dArray2()
 {
-    int rows = new Random().Next(0, 20 + 1);
-    int columns = new Random().Next(0, 20 + 1);
+    int rows = new Random().Next(0, 11);
+    int columns = new Random().Next(0, 11);
     int[,] array = new int[rows, columns];
 
     for(int i = 0; i < rows; i++)
         for(int j = 0; j < columns; j++)
-            array[i, j] = new Random().Next(0, 500 + 1);
+            array[i, j] = new Random().Next(0, 1000);
     return array;
 }
-void Show2dArray (int[,] array)
+void Show2dArray2(int[,] array)
 {
     for(int i = 0; i < array.GetLength(0); i++)
     {
@@ -76,14 +76,14 @@ void findNumber(int[,] array)
     
 }
 
-int[,] MyArray = CreateRandom2dArray();
+int[,] MyArray = CreateRandom2dArray2();
 findNumber(MyArray);
-Show2dArray(MyArray);
-*/
+Show2dArray2(MyArray);
+
 
 // Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
 
-int[,] CreateRandom2DArray ()
+int[,] CreateRandom2DArray3()
 {
     Console.WriteLine("Input a number of rows: ");
     int rows = Convert.ToInt32(Console.ReadLine());
@@ -137,7 +137,7 @@ double[] Average(int[,] array)
 }
 
 
-int[,] myArray = CreateRandom2DArray();
+int[,] myArray = CreateRandom2DArray3();
 Show2DArray(myArray);
 double[] average = Average(myArray);
 ShowArray(average);
