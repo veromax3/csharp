@@ -128,11 +128,11 @@ double[] Average(int[,] array)
         double mean = 0;
         for(int i = 0; i < array.GetLength(0); i++)
         {
-            mean = (array[i, j] + mean);
-            
+            mean = (array[i, j] + mean); 
         }
         arrayMean[ii] = (mean / array.GetLength(0));
     } 
+    
     return arrayMean;
 }
 
