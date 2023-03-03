@@ -158,7 +158,7 @@ Console.WriteLine();
 */
 
 // Задача 58: Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
-
+/*
 int[,] CreateRandom2dArray3()
 {
     Console.WriteLine("Input a number of rows: ");
@@ -215,9 +215,6 @@ int[,] MatrixProduct(int[,] array1, int[,] array2)
     return matrixProduct;
 }
 
-
-
-
 int[,] newArray3 = CreateRandom2dArray3();
 int[,] newArray4 = CreateRandom2dArray3();
 
@@ -231,4 +228,34 @@ int[,] matrixProduct = MatrixProduct(newArray3, newArray4);
 Console.WriteLine("The result of 2 matrices product is: ");
 Show2dArray3(matrixProduct);
 
+*/
+
+// Задача 62. Напишите программу, которая заполнит спирально массив 4 на 4.
+
+
+int[,] CreateRandom2dArray4()
+{
+    int rows = 4;
+    int columns = 4;
+    Console.WriteLine("Input min possible value: ");
+    int minValue = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Input max possible value: ");
+    int maxValue = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine();
+
+    int[,] array = new int[rows,columns];
+    for (int i = 0; i < rows; i++)
+        for (int j = 0; j < columns; j++)
+            array[i, j] = 
+}
+void Show2dArray4 (int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    { 
+        for (int j = 0; j < array.GetLength(1); j++)
+            Console.Write(array[i, j] + " ");
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+}
 
