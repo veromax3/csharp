@@ -230,24 +230,170 @@ Show2dArray3(matrixProduct);
 
 */
 
+
+
+// 
+
+/*
+int [,,] CreateRandom3DArray(int[] array, int x, int y, int z)
+{
+    
+    int[,,] uniqueArray3D = new int[x, y, z];
+
+    while(int count < (x * y * z))
+    {
+        for(int i = 0; i < x; i++)
+        {
+            for(int j = 0; j < y; j++)
+            {
+                for(int k = 0; k < z; k++)
+                {
+                    uniqueArray3D[i, j, k] = array[count];
+                    count++;
+                    
+                }
+            }
+        }
+    }
+                
+}
+   
+ */              
+    
+
+
+int[] CreateUniqueRandomArray (int x, int y, int z)
+{
+    int[] array = new int[x * y * z];
+    bool uniqueNum = true;
+    for (int i = 0; i < (x * y * z); )
+    {
+        int newNum = new Random().Next(10, 99 + 1);
+        for (int j = 0; j < i; j++ )
+        {
+            if (array[j] == newNum)
+            {
+                uniqueNum = false;
+            }
+        }   
+        if(uniqueNum == true)
+        {
+            array[i] = newNum;
+            i++;
+        }
+        
+    }
+    return array;
+}
+
+
+void Showrray1(int[] array)
+{
+    for(int i = 0; i < array.Length; i++)
+        Console.Write(array[i] + " ");
+    Console.WriteLine();
+}
+/*
+void Show3DArray1(int[,,] array)
+{
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for(int j = 0; j < array.GetLength(1); j++)
+        {
+            for(int k = 0; k < array.GetLength(2); k++)
+           
+            Console.Write(array[i, j, k] + "(" + i + "," + j + "," + k + ") ");
+        Console.WriteLine();
+        }
+    }
+    Console.WriteLine();
+}
+*/
+Console.Write("Input x: ");
+int x = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input y: ");
+int y = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input z: ");
+int z = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine();
+
+int[] createUniqueRandomArray = CreateUniqueRandomArray(x, y, z);
+
+Showrray1(createUniqueRandomArray);
+
+/*
+int[,,] new3DArray = CreateRandom3DArray();
+
+Show3DArray1(new3DArray);
+*/
+
+
 // Задача 62. Напишите программу, которая заполнит спирально массив 4 на 4.
 
-
+/*
 int[,] CreateRandom2dArray4()
 {
-    int rows = 4;
-    int columns = 4;
-    Console.WriteLine("Input min possible value: ");
+    Console.Write("Input a number of rows: ");
+    int rows = Convert.ToInt32(Console.ReadLine());
+
+    Console.Write("Input a number of columns: ");
+    int columns = Convert.ToInt32(Console.ReadLine());
+
+    Console.Write("Input min possible value: ");
     int minValue = Convert.ToInt32(Console.ReadLine());
-    Console.WriteLine("Input max possible value: ");
-    int maxValue = Convert.ToInt32(Console.ReadLine());
+
+    Console.Write("Input step size to increase value value: ");
+    int step = Convert.ToInt32(Console.ReadLine());
     Console.WriteLine();
 
     int[,] array = new int[rows,columns];
-    for (int i = 0; i < rows; i++)
-        for (int j = 0; j < columns; j++)
-            array[i, j] = 
+    int num = minValue; // переменная, в которой находится число массива
+    
+    while (num <= (columns * rows) * step)
+    {
+        for (int i = 0; i < rows; )
+        {
+            for (int j = 0; j < columns; j++)
+            {
+                array[i, j] = num;
+                num = num + step; 
+            }
+        }
+
+        for (int j = columns - 1; j > columns / 2 ;)
+        {
+            for (int i = 1; i < rows; i++)
+            {
+                array[i, j] = num;
+                num = num + step;
+            }
+        }
+        
+        for (int i = rows - 1; i > rows / 2 ; )
+        {
+            for (int j = columns - 2; j >= 0; )
+            {
+                array[i, j] = num;
+                num = num + step;
+            }
+        }
+
+        for (int j = 0; ; j++)
+        {
+            for (int i = rows - 2; i >= 0; )
+            {
+                array[i, j] = num;
+                num = num + step;
+            }
+        }
+
+    }
+    
+return array;
 }
+
+
+
 void Show2dArray4 (int[,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
@@ -258,4 +404,11 @@ void Show2dArray4 (int[,] array)
     }
     Console.WriteLine();
 }
+
+int[,] spiralArray = CreateRandom2dArray4();
+Show2dArray4(spiralArray);
+
+
+
+*/
 
