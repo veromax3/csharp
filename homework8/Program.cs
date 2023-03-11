@@ -1,14 +1,14 @@
 ﻿// Задача 54: Задайте двумерный массив. Напишите программу, которая упорядочит по убыванию элементы каждой строки двумерного массива.
-/*
+
 int[,] CreateRandom2dArray1()
 {
-    Console.WriteLine("Input a number of rows: ");
+    Console.Write("Input a number of rows: ");
     int rows = Convert.ToInt32(Console.ReadLine());
-    Console.WriteLine("Input a number of columns: ");
+    Console.Write("Input a number of columns: ");
     int columns = Convert.ToInt32(Console.ReadLine());
-    Console.WriteLine("Input min possible value: ");
+    Console.Write("Input min possible value: ");
     int minValue = Convert.ToInt32(Console.ReadLine());
-    Console.WriteLine("Input max possible value: ");
+    Console.Write("Input max possible value: ");
     int maxValue = Convert.ToInt32(Console.ReadLine());
     Console.WriteLine();
 
@@ -65,6 +65,7 @@ int[,] ReverseOrder(int[,] reverseOrder)
 
 }
 
+Console.WriteLine("TASK 54");
 int[,] newArray1 = CreateRandom2dArray1();
 Show2dArray1(newArray1);
 
@@ -73,19 +74,19 @@ int[,] reverseOrderArray = ReverseOrder(copiedArray);
 Console.WriteLine("The array with row elements in descending order: ");
 Show2dArray1(reverseOrderArray);
 Console.WriteLine();
-*/
+
 
 // Задача 56: Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить строку с наименьшей суммой элементов.
-/*
+
 int[,] CreateRandom2dArray2()
 {
-    Console.WriteLine("Input a number of rows: ");
+    Console.Write("Input a number of rows: ");
     int rows = Convert.ToInt32(Console.ReadLine());
-    Console.WriteLine("Input a number of columns: ");
+    Console.Write("Input a number of columns: ");
     int columns = Convert.ToInt32(Console.ReadLine());
-    Console.WriteLine("Input min possible value: ");
+    Console.Write("Input min possible value: ");
     int minValue = Convert.ToInt32(Console.ReadLine());
-    Console.WriteLine("Input max possible value: ");
+    Console.Write("Input max possible value: ");
     int maxValue = Convert.ToInt32(Console.ReadLine());
     Console.WriteLine();
 
@@ -144,30 +145,31 @@ int RowSWithmallestSum(int[] array)
     return (rowMinSum + 1);
 }
 
+Console.WriteLine("TASK 56");
 int[,] newArray2 = CreateRandom2dArray2();
-Console.WriteLine("The sums of elements of rows ");
 Show2dArray2(newArray2);
 
 int[] sumElementsInRows = SumInRows(newArray2);
+Console.WriteLine("The sums of elements of rows: ");
 ShowArray2(sumElementsInRows);
 
 int RowWithMinSum = RowSWithmallestSum(sumElementsInRows);
 Console.WriteLine("The row with smallest sum of elements is: " + RowWithMinSum);
 Console.WriteLine();
 
-*/
+
 
 // Задача 58: Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
-/*
+
 int[,] CreateRandom2dArray3()
 {
-    Console.WriteLine("Input a number of rows: ");
+    Console.Write("Input a number of rows: ");
     int rows = Convert.ToInt32(Console.ReadLine());
-    Console.WriteLine("Input a number of columns: ");
+    Console.Write("Input a number of columns: ");
     int columns = Convert.ToInt32(Console.ReadLine());
-    Console.WriteLine("Input min possible value: ");
+    Console.Write("Input min possible value: ");
     int minValue = Convert.ToInt32(Console.ReadLine());
-    Console.WriteLine("Input max possible value: ");
+    Console.Write("Input max possible value: ");
     int maxValue = Convert.ToInt32(Console.ReadLine());
     Console.WriteLine();
 
@@ -215,7 +217,10 @@ int[,] MatrixProduct(int[,] array1, int[,] array2)
     return matrixProduct;
 }
 
+Console.WriteLine("TASK 58");
+Console.WriteLine("Set dimensions for the first matrix");
 int[,] newArray3 = CreateRandom2dArray3();
+Console.WriteLine("Set dimensions for the second matrix");
 int[,] newArray4 = CreateRandom2dArray3();
 
 Console.WriteLine("The first matrix is: ");
@@ -228,13 +233,13 @@ int[,] matrixProduct = MatrixProduct(newArray3, newArray4);
 Console.WriteLine("The result of 2 matrices product is: ");
 Show2dArray3(matrixProduct);
 
-*/
+
 
 
 
 // Задача 60. ...Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. 
 // Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
-/*
+
 int[] UniqueElements(int x, int y, int z)
 {
     int[] array = new int[x * y * z];
@@ -286,6 +291,7 @@ int[,,] FillByUniqueElements(int[] array, int x, int y, int z)
     return fillByUniqueElements;
 }
 
+
 void Show3DArray(int[,,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
@@ -303,7 +309,13 @@ void Show3DArray(int[,,] array)
     Console.WriteLine();
 }
 
+void CheckOut(int x, int y, int z)
+{
+    if((x * y * z) > 90) Console.WriteLine("Error! An array of this size can't contain two digit elements without repeats!");
+    if (x != y || y != z || x != z) Console.WriteLine("Error! Сalculations are possible for a cubic array!");
+}
 
+Console.WriteLine("TASK 60");
 Console.Write("Input a coordinate x: ");
 int x = Convert.ToInt32(Console.ReadLine());
 
@@ -314,6 +326,8 @@ Console.Write("Input a coordinate z: ");
 int z = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine();
 
+CheckOut(x,  y,  z);
+
 int[] array = UniqueElements(x,  y,  z);
 Console.Write("Sequence of unique two digit numbers: ");
 ShowArray(array);
@@ -323,89 +337,5 @@ Console.WriteLine("3D array containing this unique sequence: ");
 Console.WriteLine();
 Show3DArray(fillByUniqueElements);
 
-*/
 
-// Задача 62. Напишите программу, которая заполнит спирально массив 4 на 4.
-
-/*
-int[,] CreateRandom2dArray4()
-{
-    Console.Write("Input a number of rows: ");
-    int rows = Convert.ToInt32(Console.ReadLine());
-
-    Console.Write("Input a number of columns: ");
-    int columns = Convert.ToInt32(Console.ReadLine());
-
-    Console.Write("Input min possible value: ");
-    int minValue = Convert.ToInt32(Console.ReadLine());
-
-    Console.Write("Input step size to increase value value: ");
-    int step = Convert.ToInt32(Console.ReadLine());
-    Console.WriteLine();
-
-    int[,] array = new int[rows,columns];
-    int num = minValue; // переменная, в которой находится число массива
-    
-    while (num <= (columns * rows) * step)
-    {
-        for (int i = 0; i < rows; )
-        {
-            for (int j = 0; j < columns; j++)
-            {
-                array[i, j] = num;
-                num = num + step; 
-            }
-        }
-
-        for (int j = columns - 1; j > columns / 2 ;)
-        {
-            for (int i = 1; i < rows; i++)
-            {
-                array[i, j] = num;
-                num = num + step;
-            }
-        }
-        
-        for (int i = rows - 1; i > rows / 2 ; )
-        {
-            for (int j = columns - 2; j >= 0; )
-            {
-                array[i, j] = num;
-                num = num + step;
-            }
-        }
-
-        for (int j = 0; ; j++)
-        {
-            for (int i = rows - 2; i >= 0; )
-            {
-                array[i, j] = num;
-                num = num + step;
-            }
-        }
-
-    }
-    
-return array;
-}
-
-
-
-void Show2dArray4 (int[,] array)
-{
-    for (int i = 0; i < array.GetLength(0); i++)
-    { 
-        for (int j = 0; j < array.GetLength(1); j++)
-            Console.Write(array[i, j] + " ");
-        Console.WriteLine();
-    }
-    Console.WriteLine();
-}
-
-int[,] spiralArray = CreateRandom2dArray4();
-Show2dArray4(spiralArray);
-
-
-
-*/
 
