@@ -232,101 +232,98 @@ Show2dArray3(matrixProduct);
 
 
 
-// 
-
+// Задача 60. ...Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. 
+// Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
 /*
-int [,,] CreateRandom3DArray(int[] array, int x, int y, int z)
-{
-    
-    int[,,] uniqueArray3D = new int[x, y, z];
-
-    while(int count < (x * y * z))
-    {
-        for(int i = 0; i < x; i++)
-        {
-            for(int j = 0; j < y; j++)
-            {
-                for(int k = 0; k < z; k++)
-                {
-                    uniqueArray3D[i, j, k] = array[count];
-                    count++;
-                    
-                }
-            }
-        }
-    }
-                
-}
-   
- */              
-    
-
-
-int[] CreateUniqueRandomArray (int x, int y, int z)
+int[] UniqueElements(int x, int y, int z)
 {
     int[] array = new int[x * y * z];
-    bool uniqueNum = true;
+    int num = 0;
+   
     for (int i = 0; i < (x * y * z); )
     {
-        int newNum = new Random().Next(10, 99 + 1);
-        for (int j = 0; j < i; j++ )
+        bool uniqueness = true;
+        num = new Random().Next(10, 99 + 1);
+        for(int j = 0; j < i; j++)
+
+            if (array[j] == num) uniqueness = false;
+
+        if(uniqueness == true)
         {
-            if (array[j] == newNum)
-            {
-                uniqueNum = false;
-            }
-        }   
-        if(uniqueNum == true)
-        {
-            array[i] = newNum;
+            array[i] = num;
             i++;
         }
-        
+       
+       
     }
     return array;
 }
 
-
-void Showrray1(int[] array)
+void ShowArray(int[] array)
 {
     for(int i = 0; i < array.Length; i++)
         Console.Write(array[i] + " ");
     Console.WriteLine();
+    Console.WriteLine();
 }
-/*
-void Show3DArray1(int[,,] array)
+
+int[,,] FillByUniqueElements(int[] array, int x, int y, int z)
 {
-    for(int i = 0; i < array.GetLength(0); i++)
+    int count = 0;
+    int[,,] fillByUniqueElements = new int[x, y, z];
+    while(count < x * y * z)
+    for (int i = 0; i < x; i++)
     {
-        for(int j = 0; j < array.GetLength(1); j++)
+        for (int j = 0; j < x; j++)
         {
-            for(int k = 0; k < array.GetLength(2); k++)
-           
-            Console.Write(array[i, j, k] + "(" + i + "," + j + "," + k + ") ");
-        Console.WriteLine();
+            for (int k = 0; k < x; k++)
+            {
+                fillByUniqueElements[i, j, k] = array[count];
+                count++;
+            }
         }
+    }
+    return fillByUniqueElements;
+}
+
+void Show3DArray(int[,,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            for (int k = 0; k < array.GetLength(2); k++)
+            {
+                Console.Write(array[i, j, k] + "(" + i + "," + j + "," + k + ") ");
+            }
+            Console.WriteLine();
+        }
+        Console.WriteLine();
     }
     Console.WriteLine();
 }
-*/
-Console.Write("Input x: ");
+
+
+Console.Write("Input a coordinate x: ");
 int x = Convert.ToInt32(Console.ReadLine());
-Console.Write("Input y: ");
+
+Console.Write("Input a coordinate y: ");
 int y = Convert.ToInt32(Console.ReadLine());
-Console.Write("Input z: ");
+
+Console.Write("Input a coordinate z: ");
 int z = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine();
 
-int[] createUniqueRandomArray = CreateUniqueRandomArray(x, y, z);
+int[] array = UniqueElements(x,  y,  z);
+Console.Write("Sequence of unique two digit numbers: ");
+ShowArray(array);
 
-Showrray1(createUniqueRandomArray);
+int[,,] fillByUniqueElements = FillByUniqueElements(array, x, y, z);
+Console.WriteLine("3D array containing this unique sequence: ");
+Console.WriteLine();
+Show3DArray(fillByUniqueElements);
 
-/*
-int[,,] new3DArray = CreateRandom3DArray();
-
-Show3DArray1(new3DArray);
 */
-
 
 // Задача 62. Напишите программу, которая заполнит спирально массив 4 на 4.
 
